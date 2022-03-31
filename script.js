@@ -11,7 +11,7 @@ searchBtn.addEventListener("click", getMealList);
 // get meal list that matches with the ingredients 
 function getMealList(){
     let searchInputTxt = document.getElementById("search-input").value.trim();
-    fetch("www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast")
+    fetch('www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
     then(Response => Response.json ())
     then(data => {
         let html = "";
@@ -36,5 +36,12 @@ function getMealList(){
 
         meal.List.innerHTML = html;
     });
+}
+// get recipe of the meal
+function getMealRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains("recipe-btn")){
+        let mealItem = e.target.parentElement.parentElement;
 
+    }
 }
